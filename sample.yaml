@@ -7,7 +7,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      ImageId: ami-014d05e6b24240371
+      ImageId: ami-0a61956d418f3cd0f
       KeyName: !Ref SSHKey
       SecurityGroups:
         - !Ref SampleNodejsDeploySG
@@ -28,7 +28,7 @@ Resources:
           set -e
           cd /home/ubuntu
           sudo npm install -g pm2
-          git clone https://github.com/5minslearn/node_with_docker.git
+          git clone https://github.com/hectordiazgomez/test_aws
           cd node_with_docker
           yarn install 
           pm2 start yarn --time --interpreter bash --name sample_node -- start -p 8000
